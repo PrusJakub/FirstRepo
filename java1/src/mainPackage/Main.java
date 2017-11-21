@@ -17,7 +17,7 @@ public class Main {
         products.add(window);
 
         final Iterator<Product> productIterator = products.iterator();
-
+        
         while (productIterator.hasNext()) {
             Product product = productIterator.next();
             if (product.getWeight() > 20) {
