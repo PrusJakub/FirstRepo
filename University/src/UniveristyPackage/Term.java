@@ -1,11 +1,18 @@
 package UniveristyPackage;
 
-public class Term extends University {
+public class Term extends SClass {
     public Term(int Id, String Name) {
         this.Name = Name;
         this.Id = Id;
         this.CreatedBy = magicStrings.createdBy;
         this.CreatedDate = magicStrings.createdDate;
-        addObject(this);
+
+    }
+    int getId(){
+        return this.Id;
+    }
+
+    String getName(){
+        return this.Name;
     }
 }

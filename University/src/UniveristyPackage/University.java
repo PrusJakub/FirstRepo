@@ -1,46 +1,47 @@
 package UniveristyPackage;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class University extends SClass {
-    Map<Integer, String> students = new HashMap<>();
-    Map<Integer, String> rooms = new HashMap<>();
-    Map<Integer, String> subjects = new HashMap<>();
-    Map<Integer, String> terms = new HashMap<>();
-    Map<Student, Subject> studentToSubjects = new HashMap<>();
-
-    MagicStrings magicStrings = new MagicStrings();
+    List<Student> students = new LinkedList<>();
+    List<Classroom> classrooms = new LinkedList<>();
+    List<Subject> subjects = new LinkedList<>();
+    List<Term> terms = new LinkedList<>();
 
     void addObject(Student student) {
-        students.put(student.getId(), student.getName());
+        students.add(student);
     }
 
     void addObject(Classroom room) {
-        rooms.put(room.getId(), room.getName());
+        classrooms.add(room);
     }
 
     void addObject(Subject subject) {
-        subjects.put(subject.getId(), subject.getName());
+        subjects.add(subject);
     }
 
     void addObject(Term term) {
-        terms.put(term.getId(), term.getName());
+        terms.add(term);
     }
 
-    int getId(){
-        return this.Id;
+    void addSubjectsForStudent(Subject subject, Student student) {
+        student.addSubject(subject);
     }
 
-    String getName(){
-        return this.Name;
+    void showSubjectsOfStudent(Student student) {
+        for(int i = 0; i < student.studentsSubjects.size(); i++){
+            Subject subject =student.studentsSubjects.get(i);
+            System.out.println(subject.getName());
+        }
     }
 
-    void addSubjectsForStudent(Subject subject, Student student){
-        studentToSubjects.put(student,subject);
+    void addTermForSubject(Subject subject,Term term){
+        subject.addTerm(term);
     }
 
-    void showSubjectsOfStudent(Student student){
-        System.out.println(studentToSubjects.get(student));
+    void addClassroomForSubject(Subject subject,Classroom classroom){
+        subject.addClassroom(classroom);
     }
+
 }
+
