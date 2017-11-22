@@ -3,7 +3,7 @@ package UniveristyPackage;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Subject extends SClass {
+class Subject extends SClass {
     public Subject(int Id, String Name){
         this.Name = Name;
         this.Id = Id;
@@ -12,11 +12,11 @@ public class Subject extends SClass {
 
     }
 
-    List<Classroom> claaroomOfSubject = new LinkedList<>();
-    List<Term> termOfSubject = new LinkedList<>();
+    final List<Classroom> classroomOfSubject = new LinkedList<>();
+    final List<Term> termOfSubject = new LinkedList<>();
 
     void addClassroom(Classroom room){
-        claaroomOfSubject.add(room);
+        classroomOfSubject.add(room);
     }
 
     void addTerm(Term term){

@@ -1,6 +1,6 @@
 package UniveristyPackage;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         University university = new University();
 
@@ -18,6 +18,27 @@ public class Main {
         Subject subject3 = new Subject(3, "Maths");
         university.addObject(subject3);
 
+        Term term1 = new Term(1, "1");
+        university.addObject(term1);
+        Term term2 = new Term(2, "2");
+        university.addObject(term2);
+        Term term3 = new Term(3, "3");
+        university.addObject(term3);
+
+        Classroom classroom1 = new Classroom(1, "100");
+        university.addObject(classroom1);
+        Classroom classroom2 = new Classroom(2, "101");
+        university.addObject(classroom2);
+        Classroom classroom3 = new Classroom(3, "102");
+        university.addObject(classroom3);
+
+        university.addClassroomForSubject(subject1, classroom1);
+        university.addClassroomForSubject(subject1, classroom2);
+        university.addClassroomForSubject(subject2, classroom3);
+
+        university.addTermForSubject(subject1, term1);
+        university.addTermForSubject(subject1, term2);
+
         university.addSubjectsForStudent(subject1, student1);
         university.addSubjectsForStudent(subject2, student1);
         university.addSubjectsForStudent(subject3, student1);
@@ -27,7 +48,8 @@ public class Main {
         university.showSubjectsOfStudent(student1);
         university.showSubjectsOfStudent(student2);
 
-
+        university.showTermsOfSubject(subject1);
+        university.showClassroomsOfSubject(subject1);
 
     }
 }

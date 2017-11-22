@@ -1,6 +1,6 @@
 package UniveristyPackage;
 
-public class Classroom extends SClass {
+class Classroom extends SClass {
     public Classroom(int Id, String Name){
         this.Name = Name;
         this.Id = Id;

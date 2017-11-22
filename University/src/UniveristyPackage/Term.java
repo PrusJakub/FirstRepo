@@ -1,6 +1,6 @@
 package UniveristyPackage;
 
-public class Term extends SClass {
+class Term extends SClass {
     public Term(int Id, String Name) {
         this.Name = Name;
         this.Id = Id;
