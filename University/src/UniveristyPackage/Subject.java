@@ -9,22 +9,32 @@ public class Subject extends SObject {
         super(id, name);
     }
 
-    final List<Classroom> classroomOfSubject = new LinkedList<>();
-    final List<Term> termOfSubject = new LinkedList<>();
+    final List<String> classroomOfSubject = new LinkedList<>();
+    final List<String> termOfSubject = new LinkedList<>();
 
-    public void addClassroom(Classroom room){
+    public void addClassroom(String room) {
         classroomOfSubject.add(room);
     }
 
-    public void addTerm(Term term){
+    String getClassroom(int i) {
+        return classroomOfSubject.get(i);
+    }
+
+    public void addTerm(String term) {
         termOfSubject.add(term);
     }
-    String getId(){
+
+    String getTerm(int i) {
+        return termOfSubject.get(i);
+    }
+
+    String getId() {
         return this.id;
     }
 
-    String getName(){
+    String getName() {
         return this.name;
     }
+
 
 }

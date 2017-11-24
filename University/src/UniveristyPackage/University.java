@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class University extends SObject {
 
-    protected Map<String, Student> studentsMap = new HashMap<>();
-    protected Map<String, Subject> subjectsMap = new HashMap<>();
-    protected Map<String, Term> termsMap = new HashMap<>();
-    protected Map<String, Classroom> classroomsMap = new HashMap<>();
+    private Map<String, Student> studentsMap = new HashMap<>();
+    private Map<String, Subject> subjectsMap = new HashMap<>();
+    private Map<String, Term> termsMap = new HashMap<>();
+    private Map<String, Classroom> classroomsMap = new HashMap<>();
 
 
     public void addStudent(Student student) {
@@ -28,39 +28,36 @@ public class University extends SObject {
     }
 
 
-
     public void addSubjectsForStudent(Subject subject, Student student) {
-        addSubject(subject);
+        student.addSubject(subject.getId());
     }
 
     public void showSubjectsOfStudent(Student student) {
-        for (int i = 0; i < student.studentsSubjects.size(); i++) {
-            Subject subject = student.studentsSubjects.get(i);
-            System.out.println(subject.getName());
+        for (int i = 0; i < student.subjects.size(); i++) {
+            System.out.println(subjectsMap.get(student.getSubjects(i)).getName());
+        }
+    }
+
+    public void addClassroomForSubject(Subject subject, Classroom classroom) {
+        subject.addClassroom(classroom.getId());
+    }
+
+    public void showClassroomsOfSubject(Subject subject) {
+        for (int i = 0; i < subject.classroomOfSubject.size(); i++) {
+            System.out.println(classroomsMap.get(subject.getClassroom(i)).getName());
         }
     }
 
     public void addTermForSubject(Subject subject, Term term) {
-        subject.addTerm(term);
-    }
-
-    public void addClassroomForSubject(Subject subject, Classroom classroom) {
-        subject.addClassroom(classroom);
+        subject.addTerm(term.getId());
     }
 
     public void showTermsOfSubject(Subject subject) {
         for (int i = 0; i < subject.termOfSubject.size(); i++) {
-            Term term = subject.termOfSubject.get(i);
-            System.out.println(term.getName());
+            System.out.println(termsMap.get(subject.getTerm(i)).getName());
         }
     }
 
-    public void showClassroomsOfSubject(Subject subject) {
-        for (int i = 0; i < subject.termOfSubject.size(); i++) {
-            Classroom classroom = subject.classroomOfSubject.get(i);
-            System.out.println(classroom.getName());
-        }
-    }
 
 }
 

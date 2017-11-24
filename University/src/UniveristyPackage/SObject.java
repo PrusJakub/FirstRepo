@@ -8,17 +8,16 @@ abstract class SObject {
     String createdBy;
     LocalDate createdDate;
 
-    public SObject(){
+    public SObject() {
 
     }
 
-    public SObject(String id, String name){
+    public SObject(String id, String name) {
         this.id = id;
         this.name = name;
         createdBy = ProjectDefaults.createdBy;
         createdDate = ProjectDefaults.createdDate;
     }
-
 
 
 }

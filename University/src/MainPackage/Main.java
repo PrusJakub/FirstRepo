@@ -62,13 +62,6 @@ class Main {
         classrooms.add(new Classroom("classroom5", "202"));
         university.addClassroom(classrooms.get(classroomsIndex++));
 
-        university.addClassroomForSubject(subjects.get(0), classrooms.get(0));
-        university.addClassroomForSubject(subjects.get(0), classrooms.get(1));
-        university.addClassroomForSubject(subjects.get(1), classrooms.get(2));
-
-        university.addTermForSubject(subjects.get(0), terms.get(0));
-        university.addTermForSubject(subjects.get(0), terms.get(2));
-
         university.addSubjectsForStudent(subjects.get(0), students.get(0));
         university.addSubjectsForStudent(subjects.get(1), students.get(0));
         university.addSubjectsForStudent(subjects.get(2), students.get(0));
@@ -76,10 +69,32 @@ class Main {
         university.addSubjectsForStudent(subjects.get(1), students.get(1));
 
         university.showSubjectsOfStudent(students.get(0));
+        System.out.println("");
         university.showSubjectsOfStudent(students.get(1));
 
+        university.addTermForSubject(subjects.get(0),terms.get(0));
+        university.addTermForSubject(subjects.get(0),terms.get(2));
+        university.addTermForSubject(subjects.get(0),terms.get(5));
+        university.addTermForSubject(subjects.get(1),terms.get(3));
+        university.addTermForSubject(subjects.get(1),terms.get(4));
+
+        System.out.println("");
         university.showTermsOfSubject(subjects.get(0));
+        System.out.println("");
+        university.showTermsOfSubject(subjects.get(1));
+        System.out.println("");
+
+        university.addClassroomForSubject(subjects.get(0),classrooms.get(0));
+        university.addClassroomForSubject(subjects.get(0),classrooms.get(3));
+        university.addClassroomForSubject(subjects.get(0),classrooms.get(4));
+        university.addClassroomForSubject(subjects.get(1),classrooms.get(2));
+        university.addClassroomForSubject(subjects.get(1),classrooms.get(1));
+
         university.showClassroomsOfSubject(subjects.get(0));
+        System.out.println("");
+        university.showClassroomsOfSubject(subjects.get(1));
+
+
 
     }
 }

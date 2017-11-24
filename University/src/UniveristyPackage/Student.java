@@ -1,7 +1,8 @@
 package UniveristyPackage;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
+
 
 public class Student extends SObject {
     String firstName;
@@ -9,7 +10,7 @@ public class Student extends SObject {
     int age;
     int year;
 
-    Set<String> subjects = new HashSet<>();
+    List<String> subjects = new LinkedList<>();
 
     public Student(String id, String firstName, String lastName, int age, int year) {
         super(id, firstName + lastName);
@@ -19,8 +20,12 @@ public class Student extends SObject {
         this.year = year;
     }
 
-    void addSubjec(Subject subject){
-        subjects.add(subject.getId());
+    void addSubject(String subjectId) {
+        subjects.add(subjectId);
+    }
+
+    String getSubjects(int i) {
+        return subjects.get(i);
     }
 
     String getId() {
