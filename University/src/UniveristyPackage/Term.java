@@ -6,11 +6,11 @@ public class Term extends SObject {
         super(id, name);
     }
 
-    String getId(){
+    String getId() {
         return this.id;
     }
 
-    String getName(){
+    String getName() {
         return this.name;
     }
 }
