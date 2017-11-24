@@ -3,6 +3,7 @@ package UniveristyPackage;
 import java.util.HashMap;
 import java.util.Map;
 
+// a tu gdzie jest konstruktor - id i name, hm? nulle mają być zawsze?
 public class University extends SObject {
 
     private Map<String, Student> studentsMap = new HashMap<>();
@@ -10,9 +11,16 @@ public class University extends SObject {
     private Map<String, Term> termsMap = new HashMap<>();
     private Map<String, Classroom> classroomsMap = new HashMap<>();
 
-
     public void addStudent(Student student) {
-        studentsMap.put(student.getId(), student);
+        addStudents(new List<Student>{
+            student
+        });
+    }
+
+    public void addStudents(List<Student> students) {
+        for(Student s : student){
+            studentsMap.put(student.getId(), student);
+        }
     }
 
     public void addSubject(Subject subject) {
@@ -27,7 +35,9 @@ public class University extends SObject {
         classroomsMap.put(classroom.getId(), classroom);
     }
 
-
+    // jaki to ma sens? 
+    // wysyłasz 2 id - wyciągasz odpowiedniego studenta i na nim dodajesz do seta odpowiednie id
+    // bonusowo sprawdzaj czy id subjectu jest ok zanim je dodasz
     public void addSubjectsForStudent(Subject subject, Student student) {
         student.addSubject(subject.getId());
     }
