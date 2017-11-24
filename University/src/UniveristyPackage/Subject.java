@@ -1,7 +1,8 @@
 package UniveristyPackage;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+
+import java.util.Set;
 
 // te same uwagi do innych obiektów
 public class Subject extends SObject {
@@ -11,36 +12,12 @@ public class Subject extends SObject {
     }
 
     // Set<String> clasroomIds, termIds - dlaczego chcę sety?
-    final List<String> classroomOfSubject = new LinkedList<>();
-    final List<String> termOfSubject = new LinkedList<>();
+    Set<String> classroomIds = new HashSet<>();
+    Set<String> termIds = new HashSet<>();
 
-    // co room? id?
-    public void addClassroom(String room) {
-        classroomOfSubject.add(room);
-    }
 
-    // to rozumiem kod, który służy do rzucania IndexOutOfBoundException? ;)
-    // i co to jest, private? default? public może?
-    String getClassroom(int i) {
-        return classroomOfSubject.get(i);
-    }
 
-    // termId
-    public void addTerm(String term) {
-        termOfSubject.add(term);
-    }
 
-    String getTerm(int i) {
-        return termOfSubject.get(i);
-    }
-
-    String getId() {
-        return this.id;
-    }
-
-    String getName() {
-        return this.name;
-    }
 
 
 }

@@ -21,5 +21,13 @@ abstract class SObject {
         createdDate = ProjectDefaults.createdDate;
     }
 
+    String getId() {
+        return this.id;
+    }
+
+    String getName() {
+        return this.name;
+    }
+
     // DRY, DRY, DRY
 }

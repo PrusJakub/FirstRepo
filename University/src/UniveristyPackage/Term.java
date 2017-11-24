@@ -8,12 +8,4 @@ public class Term extends SObject {
         super(id, name);
     }
 
-    // DRY!
-    String getId() {
-        return this.id;
-    }
-
-    String getName() {
-        return this.name;
-    }
 }

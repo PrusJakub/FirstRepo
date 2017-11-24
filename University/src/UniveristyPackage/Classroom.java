@@ -2,19 +2,10 @@ package UniveristyPackage;
 
 public class Classroom extends SObject {
 
-    // ile się zmieści ludzi w tej sali? 
-
-    public Classroom(String id, String name) {
+    private int capacity;
+    public Classroom(String id, String name, int capacity) {
         super(id, name);
-    }
-
-	// DRY!
-    String getId() {
-        return this.id;
-    }
-
-    String getName() {
-        return this.name;
+        this.capacity = capacity;
     }
 
 }
