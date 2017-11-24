@@ -3,6 +3,8 @@ package UniveristyPackage;
 import java.time.LocalDate;
 
 abstract class SObject {
+    // public 
+    // zawsze dodawaj znaczniki dostępu chyba, że bardzo celowo wiesz, że ma ich być nie być
     String id;
     String name;
     String createdBy;
@@ -19,5 +21,5 @@ abstract class SObject {
         createdDate = ProjectDefaults.createdDate;
     }
 
-
+    // DRY, DRY, DRY
 }

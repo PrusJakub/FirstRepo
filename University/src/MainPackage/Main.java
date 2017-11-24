@@ -13,28 +13,24 @@ class Main {
         List<Term> terms = new LinkedList<>();
         List<Classroom> classrooms = new LinkedList<>();
 
-        int studentsIndex = 0;
+        //int studentsIndex = 0;
         int subjectsIndex = 0;
         int termsIndex = 0;
         int classroomsIndex = 0;
 
-        students.add(new Student("student1", "Wojciech", "Kowalski", 22, 4));
-        university.addStudent(students.get(studentsIndex++));
-        students.add(new Student("student2", "Kamil", "Nowak", 20, 2));
-        university.addStudent(students.get(studentsIndex++));
-        students.add(new Student("student3", "Maciej", "Lewandowski", 26, 5));
-        university.addStudent(students.get(studentsIndex++));
-        students.add(new Student("student4", "Jakub", "Puczyk", 21, 3));
-        university.addStudent(students.get(studentsIndex++));
+        Student std1 = new Student("student1", "Wojciech", "Kowalski", 22, 4);
+        Student std2 = new Student("student2", "Kamil", "Nowak", 20, 2);
+        Student std3 = new Student("student3", "Maciej", "Lewandowski", 26, 5);
+        Student std4 = new Student("student4", "Jakub", "Puczyk", 21, 3);
 
-        subjects.add(new Subject("subject1", "English"));
-        university.addSubject(subjects.get(subjectsIndex++));
-        subjects.add(new Subject("subject2", "Polish"));
-        university.addSubject(subjects.get(subjectsIndex++));
-        subjects.add(new Subject("subject3", "German"));
-        university.addSubject(subjects.get(subjectsIndex++));
-        subjects.add(new Subject("subject4", "Maths"));
-        university.addSubject(subjects.get(subjectsIndex++));
+        students.add(std1);
+        students.add(std2);
+        students.add(std3);
+        students.add(std4);
+
+        university.addStudent(students);
+
+        // etc. etc...
 
         terms.add(new Term("term1", "Monday"));
         university.addTerm(terms.get(termsIndex++));
@@ -62,7 +58,8 @@ class Main {
         classrooms.add(new Classroom("classroom5", "202"));
         university.addClassroom(classrooms.get(classroomsIndex++));
 
-        university.addSubjectsForStudent(subjects.get(0), students.get(0));
+        // itd... 
+        university.addSubjectsForStudent(std1, students.get(0));
         university.addSubjectsForStudent(subjects.get(1), students.get(0));
         university.addSubjectsForStudent(subjects.get(2), students.get(0));
         university.addSubjectsForStudent(subjects.get(0), students.get(1));
