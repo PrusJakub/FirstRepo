@@ -3,7 +3,12 @@ package UniveristyPackage;
 import java.util.LinkedList;
 import java.util.List;
 
-class Student extends SClass {
+class Student extends SObject {
+    String firstName;
+    String lastName;
+    int age;
+    int year;
+
     public Student(int Id, String Name){
         this.Name = Name;
         this.Id = Id;
@@ -16,10 +21,6 @@ class Student extends SClass {
         studentsSubjects.add(subject);
     }
 
-    String firstName;
-    String lastName;
-    int age;
-    int year;
 
     int getId(){
         return this.Id;

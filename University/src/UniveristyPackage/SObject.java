@@ -1,6 +1,7 @@
 package UniveristyPackage;
 
-abstract class SClass {
+abstract class SObject {
+
     final MagicStrings magicStrings = new MagicStrings();
     int Id;
     String Name;

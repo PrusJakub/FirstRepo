@@ -1,6 +1,6 @@
 package UniveristyPackage;
 
-class Classroom extends SClass {
+class Classroom extends SObject {
     public Classroom(int Id, String Name){
         this.Name = Name;
         this.Id = Id;

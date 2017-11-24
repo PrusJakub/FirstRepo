@@ -4,6 +4,7 @@ class Main {
     public static void main(String[] args) {
         University university = new University();
 
+
         Student student1 = new Student(1, "Wojciech");
         university.addObject(student1);
         Student student2 = new Student(2, "Kamil");

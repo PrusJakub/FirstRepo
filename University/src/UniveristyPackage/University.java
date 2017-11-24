@@ -2,11 +2,11 @@ package UniveristyPackage;
 
 import java.util.*;
 
-class University extends SClass {
-    private final List<Student> students = new LinkedList<>();
-    private final List<Classroom> classrooms = new LinkedList<>();
-    private final List<Subject> subjects = new LinkedList<>();
-    private final List<Term> terms = new LinkedList<>();
+class University extends SObject {
+    private  List<Student> students = new LinkedList<>();
+    private  List<Classroom> classrooms = new LinkedList<>();
+    private  List<Subject> subjects = new LinkedList<>();
+    private  List<Term> terms = new LinkedList<>();
 
     void addObject(Student student) {
         students.add(student);

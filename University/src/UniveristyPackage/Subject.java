@@ -3,7 +3,7 @@ package UniveristyPackage;
 import java.util.LinkedList;
 import java.util.List;
 
-class Subject extends SClass {
+class Subject extends SObject {
     public Subject(int Id, String Name){
         this.Name = Name;
         this.Id = Id;
