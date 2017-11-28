@@ -4,15 +4,15 @@ public class TaskUtil {
         if (String.isBlank(leadState) || leadState.length() > 2) {
             return null;
         }
-            
+
         String taskPriority;
-        
+
         if (leadState == 'CA') {
-             taskPriority = 'High'; 
+            taskPriority = 'High';
         } else {
-             taskPriority = 'Normal';
+            taskPriority = 'Normal';
         }
-        
+
         return taskPriority;
     }
 }

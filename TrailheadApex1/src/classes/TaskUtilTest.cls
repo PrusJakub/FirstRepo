@@ -4,7 +4,7 @@ private class TaskUtilTest {
         String pri = TaskUtil.getTaskPriority('NY');
         System.assertEquals('Normal', pri);
     }
-      @isTest static void testTaskHighPriority() {
+    @isTest static void testTaskHighPriority() {
         String pri = TaskUtil.getTaskPriority('CA');
         System.assertEquals('High', pri);
     }
