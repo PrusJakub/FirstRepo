@@ -28,22 +28,20 @@ public with sharing class ExercisesController {
             exercise = new Ex2CountingNumbers();
         }
 
-
         outputExerciseString = exercise.solveTheExercise(splittedInputString);
-
 
     }
 
-    public static String isInputEmpty(List<String> input) {
+    public static List<String> isInputEmpty(List<String> input) {
         boolean isInputEmpty = true;
-
+        List<String> inputWithoutBlanks = new List<String>();
         for (String st : input) {
             if (st == '' || st == ('\n')) {
                 isInputEmpty = true;
             } else {
-                return st;
+                inputWithoutBlanks.add(st);
             }
         }
-        return null;
+        return inputWithoutBlanks;
     }
 }
