@@ -2,14 +2,16 @@
  * Created by Kuba on 29.11.2017.
  */
 
-public with sharing class Ex1SayingHello implements ExercisesLoader {
+public with sharing class Ex2CountingNumbers implements ExercisesLoader {
     public String solveTheExercise(List<String> input) {
         String st = ExercisesController.isInputEmpty(input);
         if (st == null) {
             return 'You have to type text to be solved';
         } else {
-            return 'What is your name? ' + st + '\nHello, ' + st + ', nice to meet you!';
+
+            return st + ' has ' + st.length() + ' characters';
         }
+
 
     }
 }

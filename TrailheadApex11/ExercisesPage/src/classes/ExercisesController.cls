@@ -9,6 +9,7 @@ public with sharing class ExercisesController {
         List<SelectOption> options = new List<SelectOption>();
         options.add(new SelectOption('', '---Select---'));
         options.add(new SelectOption('SayingHello', 'Saying Hello'));
+        options.add(new SelectOption('CountingNumbers', 'Counting the Number of Characters'));
         return options;
     }
 
@@ -23,11 +24,26 @@ public with sharing class ExercisesController {
 
         if (className.equals('SayingHello')) {
             exercise = new Ex1SayingHello();
+        } else if (className.equals('CountingNumbers')) {
+            exercise = new Ex2CountingNumbers();
         }
 
 
         outputExerciseString = exercise.solveTheExercise(splittedInputString);
 
 
+    }
+
+    public static String isInputEmpty(List<String> input) {
+        boolean isInputEmpty = true;
+
+        for (String st : input) {
+            if (st == '' || st == ('\n')) {
+                isInputEmpty = true;
+            } else {
+                return st;
+            }
+        }
+        return null;
     }
 }
