@@ -12,8 +12,11 @@ public with sharing class Ex4MadLib implements ExercisesLoader {
             if (noun == null) {
                 return 'You have to type text to be solved';
             } else {
-                return 'Enter a noun: ' + noun + '\nEnter a verb: ' + verb + '\nEnter an adjective: ' + adjective + '\nEnter an adverb: ' + adverb +
-                        '\nDo you ' + verb + ' your ' + adjective + ' ' + noun + ' ' + adverb;
+                return 'Enter a noun: ' + noun
+                        + '\nEnter a verb: ' + verb
+                        + '\nEnter an adjective: ' + adjective
+                        + '\nEnter an adverb: ' + adverb
+                        + '\nDo you ' + verb + ' your ' + adjective + ' ' + noun + ' ' + adverb;
             }
         } catch (Exception e) {
             return 'You have to type text to be solved or you didn\'t type required lines of text ';

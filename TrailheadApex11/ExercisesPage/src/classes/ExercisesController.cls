@@ -31,9 +31,9 @@ public with sharing class ExercisesController {
             exercise = new Ex2CountingNumbers();
         } else if (className.equals('PrintingQuotes')) {
             exercise = new Ex3PrintingQuotes();
-        }else if (className.equals('MadLib')) {
+        } else if (className.equals('MadLib')) {
             exercise = new Ex4MadLib();
-        }else if (className.equals('SimpleMath')) {
+        } else if (className.equals('SimpleMath')) {
             exercise = new Ex5SimpleMath();
         }
 

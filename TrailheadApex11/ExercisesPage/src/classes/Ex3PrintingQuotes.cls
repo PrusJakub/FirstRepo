@@ -10,7 +10,9 @@ public with sharing class Ex3PrintingQuotes implements ExercisesLoader {
             if (quote == null) {
                 return 'You have to type text to be solved';
             } else {
-                return 'What is the quote? ' + quote + '\nWho said it? ' + saidBy + '\n' + saidBy + ' says "' + quote + '"';
+                return 'What is the quote? ' + quote
+                        + '\nWho said it? ' + saidBy
+                        + '\n' + saidBy + ' says "' + quote + '"';
             }
         } catch (Exception e) {
             return 'You have to type text to be solved or you didn\'t type required lines of text ';
