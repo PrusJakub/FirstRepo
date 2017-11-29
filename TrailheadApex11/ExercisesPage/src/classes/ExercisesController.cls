@@ -13,6 +13,7 @@ public with sharing class ExercisesController {
         options.add(new SelectOption('PrintingQuotes', 'Printing Quotes'));
         options.add(new SelectOption('MadLib', 'Mad Lib'));
         options.add(new SelectOption('SimpleMath', 'Simple Math'));
+        options.add(new SelectOption('RetirementCalculator', 'Retirement Calculator'));
         return options;
     }
 
@@ -35,6 +36,8 @@ public with sharing class ExercisesController {
             exercise = new Ex4MadLib();
         } else if (className.equals('SimpleMath')) {
             exercise = new Ex5SimpleMath();
+        } else if (className.equals('RetirementCalculator')) {
+            exercise = new Ex6RetirementCalculator();
         }
 
         outputExerciseString = exercise.solveTheExercise(splittedInputString);
