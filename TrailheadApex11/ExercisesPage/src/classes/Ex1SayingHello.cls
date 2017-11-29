@@ -9,7 +9,7 @@ public with sharing class Ex1SayingHello implements ExercisesLoader {
             if (input == null) {
                 return 'You have to type text to be solved';
             } else {
-                return 'What is your name? ' + input + '\nHello, ' + input + ', nice to meet you!';
+                return 'What is your name? ' + inputString + '\nHello, ' + inputString + ', nice to meet you!';
             }
         } catch (Exception e) {
             return 'You have to type text to be solved';
