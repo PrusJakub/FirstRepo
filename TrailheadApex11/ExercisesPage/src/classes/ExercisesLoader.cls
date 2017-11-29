@@ -3,5 +3,5 @@
  */
 
 public interface ExercisesLoader {
-    List<String> solveTheExercise(List<String> input);
+    String solveTheExercise(List<String> input);
 }
