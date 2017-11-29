@@ -5,11 +5,11 @@
 public with sharing class Ex1SayingHello implements ExercisesLoader {
     public String solveTheExercise(List<String> input) {
         try {
-            String st = ExercisesController.isInputEmpty(input).get(0);
-            if (st == null) {
+            String inputString = ExercisesController.isInputEmpty(input).get(0);
+            if (input == null) {
                 return 'You have to type text to be solved';
             } else {
-                return 'What is your name? ' + st + '\nHello, ' + st + ', nice to meet you!';
+                return 'What is your name? ' + input + '\nHello, ' + input + ', nice to meet you!';
             }
         } catch (Exception e) {
             return 'You have to type text to be solved';
