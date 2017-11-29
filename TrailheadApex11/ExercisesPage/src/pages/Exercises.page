@@ -2,15 +2,15 @@
     <apex:form>
         <apex:pageBlock title="Solve the Exercise" id="block">
             <apex:pageBlockSection columns="2">
-                <apex:inputTextarea value="{!inputExerciseString}" rows="5" cols="30"
-                                    label="Text input to be solved by exercise"/>
-                <apex:selectList value="{!className}" multiselect="false" size="1" label="Select Exercise">
+                <apex:inputTextarea label="Text input to be solved by exercise" value="{!inputExerciseString}" rows="5"
+                                    cols="30"/>
+                <apex:selectList label="Select Exercise" value="{!className}" multiselect="false" size="1">
                     <apex:selectOptions value="{!items}"/>
                     <apex:actionSupport event="onchange" action="{!showInfo}" reRender="block"/>
                 </apex:selectList>
-                <apex:inputTextarea value="{!infoExerciseString}" label="Help" rows="5" cols="30" disabled="true"/>
-                <apex:inputTextarea disabled="true" value="{!outputExerciseString}" rows="5" cols="30"
-                                    label="Solved exercise"/>
+                <apex:inputTextarea label="Help" value="{!infoExerciseString}" rows="5" cols="30" disabled="true"/>
+                <apex:inputTextarea label="Solved exercise" value="{!outputExerciseString}" rows="5" cols="30"
+                                    disabled="true"/>
             </apex:pageBlockSection>
             <apex:pageBlockButtons location="bottom">
                 <apex:commandButton action="{!solve}" value="Solve" reRender="block"/>
