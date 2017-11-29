@@ -12,6 +12,7 @@ public with sharing class ExercisesController {
         options.add(new SelectOption('CountingNumbers', 'Counting the Number of Characters'));
         options.add(new SelectOption('PrintingQuotes', 'Printing Quotes'));
         options.add(new SelectOption('MadLib', 'Mad Lib'));
+        options.add(new SelectOption('SimpleMath', 'Simple Math'));
         return options;
     }
 
@@ -32,6 +33,8 @@ public with sharing class ExercisesController {
             exercise = new Ex3PrintingQuotes();
         }else if (className.equals('MadLib')) {
             exercise = new Ex4MadLib();
+        }else if (className.equals('SimpleMath')) {
+            exercise = new Ex5SimpleMath();
         }
 
         outputExerciseString = exercise.solveTheExercise(splittedInputString);
