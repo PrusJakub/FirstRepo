@@ -1,6 +1,7 @@
 <apex:page controller="ExercisesController">
     <apex:form>
         <apex:pageBlock title="Solve the Exercise" id="block">
+            <apex:pageMessages />
             <apex:pageBlockSection columns="2">
                 <apex:inputTextarea label="Text input to be solved by exercise" value="{!inputExerciseString}" rows="5"
                                     cols="30"/>
