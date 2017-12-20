@@ -1,7 +1,3 @@
-/**
- * Created by Kuba on 18.12.2017.
- */
-
 public with sharing class AccountProcessor {
 
     @future

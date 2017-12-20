@@ -1,7 +1,3 @@
-/**
- * Created by Kuba on 18.12.2017.
- */
-
 public with sharing class AddPrimaryContact implements Queueable {
     private String state;
     private Contact contact;
@@ -12,9 +8,14 @@ public with sharing class AddPrimaryContact implements Queueable {
     }
 
     public void execute(QueueableContext context) {
+        List<Contact> contacts = new List<Contact>();
+
         for (Account account : [SELECT Id, BillingState FROM Account WHERE BillingState = :state LIMIT 200]) {
-            contact.clone().AccountId = account.Id;
-            update account;
+            Contact c = contact.clone();
+            c.AccountId = account.Id;
+            contacts.add(c);
         }
+
+        insert contacts;
     }
 }

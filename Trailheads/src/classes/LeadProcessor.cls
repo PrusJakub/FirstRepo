@@ -1,7 +1,3 @@
-/**
- * Created by Kuba on 18.12.2017.
- */
-
 global class LeadProcessor implements Database.Batchable<sObject> {
 
     global Database.QueryLocator start(Database.BatchableContext bc) {
