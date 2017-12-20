@@ -4,6 +4,7 @@ public with sharing class DailyLeadProcessorTest {
     @isTest
     private static void leadTest() {
         //given
+        String sch = '0 13 21 18 12 ? 2017';
         List<Lead> leads = new List<Lead>();
 
         for (Integer i = 0; i < 200; i++) {
@@ -11,7 +12,6 @@ public with sharing class DailyLeadProcessorTest {
         }
 
         insert leads;
-        String sch = '0 13 21 18 12 ? 2017';
 
         //when
         Test.startTest();
