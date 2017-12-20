@@ -1,0 +1,21 @@
+<apex:page controller="ExercisesController">
+    <apex:form>
+        <apex:pageBlock title="Solve the Exercise" id="block">
+            <apex:pageMessages />
+            <apex:pageBlockSection columns="2">
+                <apex:inputTextarea label="Text input to be solved by exercise" value="{!inputExerciseString}" rows="5"
+                                    cols="30"/>
+                <apex:selectList label="Select Exercise" value="{!className}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!items}"/>
+                    <apex:actionSupport event="onchange" action="{!showInfo}" reRender="block"/>
+                </apex:selectList>
+                <apex:inputTextarea label="Help" value="{!infoExerciseString}" rows="5" cols="30" disabled="true"/>
+                <apex:inputTextarea label="Solved exercise" value="{!outputExerciseString}" rows="5" cols="30"
+                                    disabled="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!solve}" value="Solve" reRender="block"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
