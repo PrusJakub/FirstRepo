@@ -1,6 +1,3 @@
-/**
- * Created by Kuba on 18.12.2017.
- */
 @isTest
 private class AccountProcessorTest {
 
