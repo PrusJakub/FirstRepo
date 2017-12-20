@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ExercisesLoader</members>
+        <members>ExercisesController</members>
+        <members>ExerciseException</members>
+        <members>Ex1SayingHello</members>
+        <members>Ex2CountingNumbers</members>
+        <members>Ex3PrintingQuotes</members>
+        <members>Ex4MadLib</members>
+        <members>Ex5SimpleMath</members>
+        <members>Ex6RetirementCalculator</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Exercises</members>
+        <name>ApexPage</name>
+    </types>
+
+    <version>41.0</version>
+</Package>
