@@ -1,7 +1,7 @@
 public with sharing class CarAddNewController {
 
     private final Car__c car;
-    private final String carBrand = 'Opel';
+    private final String carBrand = Label.DefaultCar;
     private final String carModel = 'Insignia';
     private final String carName = carBrand + ' ' + carModel;
     public ApexPages.StandardController standardController;
@@ -11,22 +11,17 @@ public with sharing class CarAddNewController {
         standardController = controller;
     }
 
-    public void save() {
+    public PageReference save() {
         this.car.Name = carName;
         this.car.Marka__c = carBrand;
         this.car.Model__c = carModel;
-        insert car;
+        return standardController.save();
     }
 
     public PageReference saveAndNew() {
         save();
-        String url = 'https://resourceful-moose-74046-dev-ed--c.eu9.visual.force.com/apex/CarAddNewPage';
-        return new PageReference(url);
+        PageReference result = Page.CarAddNewPage;
+        result.setRedirect(true);
+        return result;
     }
-
-    public PageReference cancel() {
-        String url = 'https://resourceful-moose-74046-dev-ed.my.salesforce.com/a05/o';
-        return new PageReference(url);
-    }
-
 }
