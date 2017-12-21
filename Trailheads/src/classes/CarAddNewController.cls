@@ -1,4 +1,4 @@
-public with sharing class CarEditNewController {
+public with sharing class CarAddNewController {
 
     private final Car__c car;
     public String inputEngineVolume { get; set; }
@@ -8,7 +8,7 @@ public with sharing class CarEditNewController {
     private String carName = carBrand + ' ' + carModel;
     public ApexPages.StandardController standardController;
 
-    public CarEditNewController(ApexPages.StandardController controller) {
+    public CarAddNewController(ApexPages.StandardController controller) {
         this.car = (Car__c) controller.getRecord();
         standardController = controller;
     }

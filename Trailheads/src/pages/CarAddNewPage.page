@@ -1,4 +1,4 @@
-<apex:page id="CarEditNew" standardController="Car__c" extensions="CarEditNewController">
+<apex:page id="CarAddNew" standardController="Car__c" extensions="CarAddNewController">
     <apex:sectionHeader title="Add new Car"/>
     <apex:messages/>
     <apex:form>
