@@ -20,7 +20,7 @@ public with sharing class CarAddNewController {
 
     public PageReference saveAndNew() {
         save();
-        String url = 'https://resourceful-moose-74046-dev-ed--c.eu9.visual.force.com/apex/CarEditNew';
+        String url = 'https://resourceful-moose-74046-dev-ed--c.eu9.visual.force.com/apex/CarAddNewPage';
         return new PageReference(url);
     }
 
