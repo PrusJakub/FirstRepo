@@ -1,7 +1,7 @@
 public with sharing class CarAddNewController {
 
     private final Car__c car;
-    private final String carBrand = Label.Opel;
+    private final String carBrand = Label.DefaultCar;
     private final String carModel = 'Insignia';
     private final String carName = carBrand + ' ' + carModel;
     public ApexPages.StandardController standardController;

@@ -9,11 +9,31 @@
         <members>DailyLeadProcessorTest</members>
         <members>LeadProcessor</members>
         <members>LeadProcessorTest</members>
+        <members>CarAddNewController</members>
+        <members>NewCaseListController</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>Account</members>
+        <members>Car__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>AccountList</members>
+        <members>CarAddNewPage</members>
+        <members>ContactView</members>
+        <members>CreateContact</members>
+        <members>DisplayImage</members>
+        <members>DisplayUserInfo</members>
+        <members>Exercises</members>
+        <members>NewCaseList</members>
+        <members>OppView</members>
+        <members>ShowImage</members>
+        <name>Pages</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomLabels</name>
     </types>
     <version>41.0</version>
 </Package>
