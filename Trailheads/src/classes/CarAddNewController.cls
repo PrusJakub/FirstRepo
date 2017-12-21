@@ -1,11 +1,9 @@
 public with sharing class CarAddNewController {
 
     private final Car__c car;
-    public String inputEngineVolume { get; set; }
-    public String inputEnginePower { get; set; }
-    private String carBrand = 'FSO';
-    private String carModel = 'Polonez Atu Plus';
-    private String carName = carBrand + ' ' + carModel;
+    private final String carBrand = 'Opel';
+    private final String carModel = 'Insignia';
+    private final String carName = carBrand + ' ' + carModel;
     public ApexPages.StandardController standardController;
 
     public CarAddNewController(ApexPages.StandardController controller) {
