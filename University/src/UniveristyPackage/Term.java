@@ -7,5 +7,4 @@ public class Term extends SObject {
     public Term(String id, String name) {
         super(id, name);
     }
-
 }

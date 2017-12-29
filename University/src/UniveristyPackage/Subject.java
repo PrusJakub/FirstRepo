@@ -12,12 +12,6 @@ public class Subject extends SObject {
     }
 
     // Set<String> clasroomIds, termIds - dlaczego chcę sety?
-    Set<String> classroomIds = new HashSet<>();
-    Set<String> termIds = new HashSet<>();
-
-
-
-
-
-
+    public Set<String> classroomIds = new HashSet<>();
+    public Set<String> termIds = new HashSet<>();
 }

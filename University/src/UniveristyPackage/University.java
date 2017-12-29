@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// a tu gdzie jest konstruktor - id i name, hm? nulle mają być zawsze?
 public class University extends SObject {
 
     private Map<String, Student> studentsMap = new HashMap<>();
@@ -12,6 +11,9 @@ public class University extends SObject {
     private Map<String, Term> termsMap = new HashMap<>();
     private Map<String, Classroom> classroomsMap = new HashMap<>();
 
+    public University(String id, String name) {
+        super(id, name);
+    }
 
     public void addStudents(List<Student> students) {
         for (Student s : students) {
@@ -37,20 +39,19 @@ public class University extends SObject {
         }
     }
 
-    // jaki to ma sens? 
-    // wysyłasz 2 id - wyciągasz odpowiedniego studenta i na nim dodajesz do seta odpowiednie id
-    // bonusowo sprawdzaj czy id subjectu jest ok zanim je dodasz
-
     public void addSubjectsForStudent(String subjectId, String studentId) {
-        if(studentsMap.containsKey(studentId)){
-            if(subjectsMap.containsKey(subjectId)){
+        if (studentsMap.containsKey(studentId)) {
+            if (subjectsMap.containsKey(subjectId)) {
                 studentsMap.get(studentId).subjectIds.add(subjectId);
             }
         }
     }
-    //W jaki sposob wyswietlic rzeczy z seta?
+
     public void showSubjectsOfStudent(String studentId) {
-        studentsMap.get(studentId).subjectIds.
+        System.out.println("Przedmioty, na ktore uczescza " + studentsMap.get(studentId).name);
+        for (String subject : studentsMap.get(studentId).subjectIds) {
+            System.out.println(subjectsMap.get(subject).name);
+        }
     }
 
     public void addClassroomForSubject(String subjectId, String classroomId) {
@@ -61,12 +62,12 @@ public class University extends SObject {
         }
     }
 
-    public void showClassroomsOfSubject(Subject subject) {
-        for (int i = 0; i < subject.classroomOfSubject.size(); i++) {
-            System.out.println(classroomsMap.get(subject.getClassroom(i)).getName());
+    public void showClassroomsOfSubject(String subjectId) {
+        System.out.println("Sale, w ktorych odbywa sie " + subjectsMap.get(subjectId).name);
+        for (String classroom : subjectsMap.get(subjectId).classroomIds) {
+            System.out.println(classroomsMap.get(classroom).name);
         }
     }
-
 
     public void addTermForSubject(String subjectId, String termId) {
         if (subjectsMap.containsKey(subjectId)) {
@@ -76,12 +77,10 @@ public class University extends SObject {
         }
     }
 
-    public void showTermsOfSubject(Subject subject) {
-        for (int i = 0; i < subject.termOfSubject.size(); i++) {
-            System.out.println(termsMap.get(subject.getTerm(i)).getName());
+    public void showTermsOfSubject(String subjectId) {
+        System.out.println("Terminy, w ktorych odbywa sie " + subjectsMap.get(subjectId).name);
+        for (String term : subjectsMap.get(subjectId).termIds) {
+            System.out.println(termsMap.get(term).name);
         }
     }
-
-
 }
-

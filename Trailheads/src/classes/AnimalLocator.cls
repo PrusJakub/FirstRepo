@@ -8,11 +8,8 @@ public with sharing class AnimalLocator {
         HttpResponse response = http.send(request);
 
         Map<String, Animal> results = (Map<String, Animal>) JSON.deserialize(response.getBody(), Map<String, Animal>.class);
-        //Object results = (Object) JSON.deserializeUntyped(response.getBody());
         String animalName = results.get((String) results.keySet().iterator().next()).name;
-        System.debug('jkub // ' + results);
         return animalName;
-
     }
 
     public class Animal {

@@ -5,21 +5,18 @@ import java.util.Set;
 
 
 public class Student extends SObject {
-    String firstName;
-    String lastName;
-    int age;
-    int year;
+    public String firstName;
+    public String lastName;
+    public int age;
+    public int year;
 
-    Set<String> subjectIds = new HashSet<>();
+    public Set<String> subjectIds = new HashSet<>();
 
     public Student(String id, String firstName, String lastName, int age, int year) {
-        super(id, firstName + lastName);
+        super(id, firstName + " " + lastName);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.year = year;
     }
-
-
-
 }

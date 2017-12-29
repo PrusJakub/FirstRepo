@@ -7,7 +7,7 @@ import java.util.List;
 
 class Main {
     public static void main(String[] args) {
-        University university = new University();
+        University university = new University("university1", "Uniwersytet Warszawski");
         List<Subject> subjects = new LinkedList<>();
         List<Student> students = new LinkedList<>();
         List<Term> terms = new LinkedList<>();
@@ -37,7 +37,6 @@ class Main {
 
         university.addSubjects(subjects);
 
-
         Term term1 = new Term("term1", "Monday");
         Term term2 = new Term("term2", "Tuesday");
         Term term3 = new Term("term3", "Wednesday");
@@ -56,11 +55,11 @@ class Main {
 
         university.addTerms(terms);
 
-        Classroom cr1 = new Classroom("classroom1", "100");
-        Classroom cr2 = new Classroom("classroom2", "101");
-        Classroom cr3 = new Classroom("classroom3", "102");
-        Classroom cr4 = new Classroom("classroom4", "201");
-        Classroom cr5 = new Classroom("classroom5", "202");
+        Classroom cr1 = new Classroom("classroom1", "100", 30);
+        Classroom cr2 = new Classroom("classroom2", "101", 60);
+        Classroom cr3 = new Classroom("classroom3", "102", 100);
+        Classroom cr4 = new Classroom("classroom4", "201", 20);
+        Classroom cr5 = new Classroom("classroom5", "202", 25);
 
         classrooms.add(cr1);
         classrooms.add(cr2);
@@ -70,41 +69,30 @@ class Main {
 
         university.addClassrooms(classrooms);
 
-
-
-        // itd... 
         university.addSubjectsForStudent("subject1", "student1");
         university.addSubjectsForStudent("subject2", "student1");
         university.addSubjectsForStudent("subject3", "student1");
         university.addSubjectsForStudent("subject1", "student2");
         university.addSubjectsForStudent("subject2", "student2");
 
-        university.showSubjectsOfStudent(students.get(0));
-        System.out.println("");
-        university.showSubjectsOfStudent(students.get(1));
+        university.showSubjectsOfStudent("student1");
 
-        university.addTermForSubject(subjects.get(0), terms.get(0));
-        university.addTermForSubject(subjects.get(0), terms.get(2));
-        university.addTermForSubject(subjects.get(0), terms.get(5));
-        university.addTermForSubject(subjects.get(1), terms.get(3));
-        university.addTermForSubject(subjects.get(1), terms.get(4));
+        university.addTermForSubject("subject1", "term1");
+        university.addTermForSubject("subject1", "term2");
+        university.addTermForSubject("subject1", "term4");
+        university.addTermForSubject("subject2", "term5");
+        university.addTermForSubject("subject2", "term3");
 
         System.out.println("");
-        university.showTermsOfSubject(subjects.get(0));
+        university.showTermsOfSubject("subject1");
+
+        university.addClassroomForSubject("subject1", "classroom1");
+        university.addClassroomForSubject("subject1", "classroom4");
+        university.addClassroomForSubject("subject1", "classroom5");
+        university.addClassroomForSubject("subject2", "classroom3");
+        university.addClassroomForSubject("subject2", "classroom2");
+
         System.out.println("");
-        university.showTermsOfSubject(subjects.get(1));
-        System.out.println("");
-
-        university.addClassroomForSubject(subjects.get(0), classrooms.get(0));
-        university.addClassroomForSubject(subjects.get(0), classrooms.get(3));
-        university.addClassroomForSubject(subjects.get(0), classrooms.get(4));
-        university.addClassroomForSubject(subjects.get(1), classrooms.get(2));
-        university.addClassroomForSubject(subjects.get(1), classrooms.get(1));
-
-        university.showClassroomsOfSubject(subjects.get(0));
-        System.out.println("");
-        university.showClassroomsOfSubject(subjects.get(1));
-
-
+        university.showClassroomsOfSubject("subject1");
     }
 }
