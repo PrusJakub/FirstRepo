@@ -12,7 +12,6 @@ public class University extends SObject {
     public Map<String, Subject> subjectsMap = new HashMap<>();
     public Map<String, Term> termsMap = new HashMap<>();
     public Map<String, Classroom> classroomsMap = new HashMap<>();
-    private UniversityDependency dependency;
 
     public University(String id, String name) {
         super(id, name);
@@ -42,43 +41,4 @@ public class University extends SObject {
         }
     }
 
-    public void addSubjectsForStudent(String subjectId, String studentId) {
-        dependency = new SubjectStudentDependency();
-        dependency.addDependency(this, subjectId, studentId);
-    }
-
-    public void showSubjectsOfStudent(String studentId) {
-        dependency = new SubjectStudentDependency();
-        dependency.showDependency(this, studentId);
-    }
-
-    public void addClassroomForSubject(String subjectId, String classroomId) {
-        dependency = new ClassroomSubjectDependency();
-        dependency.addDependency(this, classroomId, subjectId);
-    }
-
-    public void showClassroomsOfSubject(String subjectId) {
-        dependency = new ClassroomSubjectDependency();
-        dependency.showDependency(this, subjectId);
-    }
-
-    public void addTermForSubject(String subjectId, String termId) {
-        dependency = new TermSubjectDependency();
-        dependency.addDependency(this, termId, subjectId);
-    }
-
-    public void showTermsOfSubject(String subjectId) {
-        dependency = new TermSubjectDependency();
-        dependency.showDependency(this, subjectId);
-    }
-
-    public void addClassroomForTerm(String termId, String classroomId) {
-        dependency = new ClassroomTermDependency();
-        dependency.addDependency(this, classroomId, termId);
-    }
-
-    public void showClassroomsOfTerm(String termId) {
-        dependency = new ClassroomTermDependency();
-        dependency.showDependency(this, termId);
-    }
 }

@@ -1,5 +1,6 @@
 package MainPackage;
 
+import Depedencies.*;
 import UniveristyPackage.*;
 
 import java.util.LinkedList;
@@ -8,6 +9,7 @@ import java.util.List;
 class Main {
     public static void main(String[] args) {
         University university = new University("university1", "Uniwersytet Warszawski");
+        UniversityDependency dependency;
         List<Subject> subjects = new LinkedList<>();
         List<Student> students = new LinkedList<>();
         List<Term> terms = new LinkedList<>();
@@ -69,39 +71,40 @@ class Main {
 
         university.addClassrooms(classrooms);
 
-        university.addSubjectsForStudent("subject1", "student1");
-        university.addSubjectsForStudent("subject2", "student1");
-        university.addSubjectsForStudent("subject3", "student1");
-        university.addSubjectsForStudent("subject1", "student2");
-        university.addSubjectsForStudent("subject2", "student2");
+        dependency = new SubjectStudentDependency();
+        dependency.addDependency(university, "subject1", "student1");
+        dependency.addDependency(university, "subject2", "student1");
+        dependency.addDependency(university, "subject3", "student1");
+        dependency.addDependency(university, "subject1", "student2");
+        dependency.addDependency(university, "subject2", "student2");
+        dependency.showDependency(university, "student1");
 
-        university.showSubjectsOfStudent("student1");
-
-        university.addTermForSubject("subject1", "term1");
-        university.addTermForSubject("subject1", "term2");
-        university.addTermForSubject("subject1", "term4");
-        university.addTermForSubject("subject2", "term5");
-        university.addTermForSubject("subject2", "term3");
-
+        dependency = new TermSubjectDependency();
+        dependency.addDependency(university, "term1", "subject1");
+        dependency.addDependency(university, "term2", "subject1");
+        dependency.addDependency(university, "term4", "subject1");
+        dependency.addDependency(university, "term5", "subject2");
+        dependency.addDependency(university, "term3", "subject2");
         System.out.println("");
-        university.showTermsOfSubject("subject1");
+        dependency.showDependency(university, "subject1");
 
-        university.addClassroomForSubject("subject1", "classroom1");
-        university.addClassroomForSubject("subject1", "classroom4");
-        university.addClassroomForSubject("subject1", "classroom5");
-        university.addClassroomForSubject("subject2", "classroom3");
-        university.addClassroomForSubject("subject2", "classroom2");
-
+        dependency = new ClassroomSubjectDependency();
+        dependency.addDependency(university, "classroom1", "subject1");
+        dependency.addDependency(university, "classroom4", "subject1");
+        dependency.addDependency(university, "classroom5", "subject1");
+        dependency.addDependency(university, "classroom2", "subject1");
+        dependency.addDependency(university, "classroom3", "subject2");
+        dependency.addDependency(university, "classroom2", "subject2");
         System.out.println("");
-        university.showClassroomsOfSubject("subject1");
+        dependency.showDependency(university, "subject1");
 
-        university.addClassroomForTerm("term1", "classroom1");
-        university.addClassroomForTerm("term1", "classroom2");
-        university.addClassroomForTerm("term2", "classroom2");
-        university.addClassroomForTerm("term2", "classroom4");
-        university.addClassroomForTerm("term3", "classroom5");
-
+        dependency = new ClassroomTermDependency();
+        dependency.addDependency(university, "classroom1", "term1");
+        dependency.addDependency(university, "classroom2", "term2");
+        dependency.addDependency(university, "classroom3", "term2");
+        dependency.addDependency(university, "classroom4", "term3");
+        dependency.addDependency(university, "classroom5", "term1");
         System.out.println("");
-        university.showClassroomsOfTerm("term1");
+        dependency.showDependency(university, "term1");
     }
 }
