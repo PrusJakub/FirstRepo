@@ -71,40 +71,45 @@ class Main {
 
         university.addClassrooms(classrooms);
 
-        dependency = new SubjectStudentDependency();
-        dependency.addDependency("subject1", "student1");
-        dependency.addDependency("subject2", "student1");
-        dependency.addDependency("subject3", "student1");
-        dependency.addDependency("subject1", "student2");
-        dependency.addDependency("subject2", "student2");
-        dependency.showDependency("student1");
+        UniversityDependencyInjector udInjector = null;
+        Consumer app = null;
+        udInjector = new SubjectStudentDependencyInjector();
+        app = udInjector.getConsumer();
 
-        dependency = new TermSubjectDependency();
-        dependency.addDependency("term1", "subject1");
-        dependency.addDependency("term2", "subject1");
-        dependency.addDependency("term4", "subject1");
-        dependency.addDependency("term5", "subject2");
-        dependency.addDependency("term3", "subject2");
-        System.out.println("");
-        dependency.showDependency("subject1");
+        app.createDependencies("subject1", "student1");
+        app.createDependencies("subject2", "student1");
+        app.createDependencies("subject3", "student1");
+        app.createDependencies("subject4", "student1");
+        app.createDependencies("subject1", "student2");
+        app.showDependencies("student1");
 
-        dependency = new ClassroomSubjectDependency();
-        dependency.addDependency("classroom1", "subject1");
-        dependency.addDependency("classroom4", "subject1");
-        dependency.addDependency("classroom5", "subject1");
-        dependency.addDependency("classroom2", "subject1");
-        dependency.addDependency("classroom3", "subject2");
-        dependency.addDependency("classroom2", "subject2");
-        System.out.println("");
-        dependency.showDependency("subject1");
+        udInjector = new TermSubjectDependencyInjector();
+        app = udInjector.getConsumer();
+        app.createDependencies("term1", "subject1");
+        app.createDependencies("term2", "subject1");
+        app.createDependencies("term3", "subject1");
+        app.createDependencies("term4", "subject1");
+        app.createDependencies("term1", "subject2");
+        app.createDependencies("term2", "subject2");
+        app.showDependencies("subject1");
 
-        dependency = new ClassroomTermDependency();
-        dependency.addDependency("classroom1", "term1");
-        dependency.addDependency("classroom2", "term2");
-        dependency.addDependency("classroom3", "term2");
-        dependency.addDependency("classroom4", "term3");
-        dependency.addDependency("classroom5", "term1");
-        System.out.println("");
-        dependency.showDependency("term1");
+        udInjector = new ClassroomSubjectDependencyInjector();
+        app = udInjector.getConsumer();
+        app.createDependencies("classroom1", "subject1");
+        app.createDependencies("classroom4", "subject1");
+        app.createDependencies("classroom2", "subject1");
+        app.createDependencies("classroom5", "subject1");
+        app.createDependencies("classroom2", "subject2");
+        app.createDependencies("classroom5", "subject2");
+        app.showDependencies("subject1");
+
+        udInjector = new ClassroomTermDependencyInjector();
+        app = udInjector.getConsumer();
+        app.createDependencies("classroom1", "term1");
+        app.createDependencies("classroom4", "term1");
+        app.createDependencies("classroom3", "term1");
+        app.createDependencies("classroom2", "term1");
+        app.createDependencies("classroom1", "term2");
+        app.showDependencies("term1");
     }
 }
