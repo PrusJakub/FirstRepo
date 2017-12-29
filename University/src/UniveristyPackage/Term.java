@@ -1,8 +1,11 @@
 package UniveristyPackage;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Term extends SObject {
 
-    // kiedy się zaczyna ten termin? w jakiej się odbywa sali? 
+    public Set<String> classroomIds = new HashSet<>();
 
     public Term(String id, String name) {
         super(id, name);

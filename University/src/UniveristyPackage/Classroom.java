@@ -8,5 +8,4 @@ public class Classroom extends SObject {
         super(id, name);
         this.capacity = capacity;
     }
-
 }

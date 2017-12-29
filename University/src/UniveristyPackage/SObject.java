@@ -1,5 +1,6 @@
 package UniveristyPackage;
 
+
 import java.time.LocalDate;
 
 abstract class SObject {
@@ -27,4 +28,5 @@ abstract class SObject {
     String getName() {
         return this.name;
     }
+
 }

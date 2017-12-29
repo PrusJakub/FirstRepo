@@ -94,5 +94,14 @@ class Main {
 
         System.out.println("");
         university.showClassroomsOfSubject("subject1");
+
+        university.addClassroomForTerm("term1", "classroom1");
+        university.addClassroomForTerm("term1", "classroom2");
+        university.addClassroomForTerm("term2", "classroom2");
+        university.addClassroomForTerm("term2", "classroom4");
+        university.addClassroomForTerm("term3", "classroom5");
+
+        System.out.println("");
+        university.showClassroomsOfTerm("term1");
     }
 }

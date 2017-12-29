@@ -1,15 +1,18 @@
 package UniveristyPackage;
 
+import Depedencies.*;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class University extends SObject {
 
-    private Map<String, Student> studentsMap = new HashMap<>();
-    private Map<String, Subject> subjectsMap = new HashMap<>();
-    private Map<String, Term> termsMap = new HashMap<>();
-    private Map<String, Classroom> classroomsMap = new HashMap<>();
+    public Map<String, Student> studentsMap = new HashMap<>();
+    public Map<String, Subject> subjectsMap = new HashMap<>();
+    public Map<String, Term> termsMap = new HashMap<>();
+    public Map<String, Classroom> classroomsMap = new HashMap<>();
+    private UniversityDependency dependency;
 
     public University(String id, String name) {
         super(id, name);
@@ -40,47 +43,42 @@ public class University extends SObject {
     }
 
     public void addSubjectsForStudent(String subjectId, String studentId) {
-        if (studentsMap.containsKey(studentId)) {
-            if (subjectsMap.containsKey(subjectId)) {
-                studentsMap.get(studentId).subjectIds.add(subjectId);
-            }
-        }
+        dependency = new SubjectStudentDependency();
+        dependency.addDependency(this, subjectId, studentId);
     }
 
     public void showSubjectsOfStudent(String studentId) {
-        System.out.println("Przedmioty, na ktore uczescza " + studentsMap.get(studentId).name);
-        for (String subject : studentsMap.get(studentId).subjectIds) {
-            System.out.println(subjectsMap.get(subject).name);
-        }
+        dependency = new SubjectStudentDependency();
+        dependency.showDependency(this, studentId);
     }
 
     public void addClassroomForSubject(String subjectId, String classroomId) {
-        if (subjectsMap.containsKey(subjectId)) {
-            if (classroomsMap.containsKey(classroomId)) {
-                subjectsMap.get(subjectId).classroomIds.add(classroomId);
-            }
-        }
+        dependency = new ClassroomSubjectDependency();
+        dependency.addDependency(this, classroomId, subjectId);
     }
 
     public void showClassroomsOfSubject(String subjectId) {
-        System.out.println("Sale, w ktorych odbywa sie " + subjectsMap.get(subjectId).name);
-        for (String classroom : subjectsMap.get(subjectId).classroomIds) {
-            System.out.println(classroomsMap.get(classroom).name);
-        }
+        dependency = new ClassroomSubjectDependency();
+        dependency.showDependency(this, subjectId);
     }
 
     public void addTermForSubject(String subjectId, String termId) {
-        if (subjectsMap.containsKey(subjectId)) {
-            if (termsMap.containsKey(termId)) {
-                subjectsMap.get(subjectId).termIds.add(termId);
-            }
-        }
+        dependency = new TermSubjectDependency();
+        dependency.addDependency(this, termId, subjectId);
     }
 
     public void showTermsOfSubject(String subjectId) {
-        System.out.println("Terminy, w ktorych odbywa sie " + subjectsMap.get(subjectId).name);
-        for (String term : subjectsMap.get(subjectId).termIds) {
-            System.out.println(termsMap.get(term).name);
-        }
+        dependency = new TermSubjectDependency();
+        dependency.showDependency(this, subjectId);
+    }
+
+    public void addClassroomForTerm(String termId, String classroomId) {
+        dependency = new ClassroomTermDependency();
+        dependency.addDependency(this, classroomId, termId);
+    }
+
+    public void showClassroomsOfTerm(String termId) {
+        dependency = new ClassroomTermDependency();
+        dependency.showDependency(this, termId);
     }
 }
