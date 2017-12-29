@@ -72,39 +72,39 @@ class Main {
         university.addClassrooms(classrooms);
 
         dependency = new SubjectStudentDependency();
-        dependency.addDependency(university, "subject1", "student1");
-        dependency.addDependency(university, "subject2", "student1");
-        dependency.addDependency(university, "subject3", "student1");
-        dependency.addDependency(university, "subject1", "student2");
-        dependency.addDependency(university, "subject2", "student2");
-        dependency.showDependency(university, "student1");
+        dependency.addDependency("subject1", "student1");
+        dependency.addDependency("subject2", "student1");
+        dependency.addDependency("subject3", "student1");
+        dependency.addDependency("subject1", "student2");
+        dependency.addDependency("subject2", "student2");
+        dependency.showDependency("student1");
 
         dependency = new TermSubjectDependency();
-        dependency.addDependency(university, "term1", "subject1");
-        dependency.addDependency(university, "term2", "subject1");
-        dependency.addDependency(university, "term4", "subject1");
-        dependency.addDependency(university, "term5", "subject2");
-        dependency.addDependency(university, "term3", "subject2");
+        dependency.addDependency("term1", "subject1");
+        dependency.addDependency("term2", "subject1");
+        dependency.addDependency("term4", "subject1");
+        dependency.addDependency("term5", "subject2");
+        dependency.addDependency("term3", "subject2");
         System.out.println("");
-        dependency.showDependency(university, "subject1");
+        dependency.showDependency("subject1");
 
         dependency = new ClassroomSubjectDependency();
-        dependency.addDependency(university, "classroom1", "subject1");
-        dependency.addDependency(university, "classroom4", "subject1");
-        dependency.addDependency(university, "classroom5", "subject1");
-        dependency.addDependency(university, "classroom2", "subject1");
-        dependency.addDependency(university, "classroom3", "subject2");
-        dependency.addDependency(university, "classroom2", "subject2");
+        dependency.addDependency("classroom1", "subject1");
+        dependency.addDependency("classroom4", "subject1");
+        dependency.addDependency("classroom5", "subject1");
+        dependency.addDependency("classroom2", "subject1");
+        dependency.addDependency("classroom3", "subject2");
+        dependency.addDependency("classroom2", "subject2");
         System.out.println("");
-        dependency.showDependency(university, "subject1");
+        dependency.showDependency("subject1");
 
         dependency = new ClassroomTermDependency();
-        dependency.addDependency(university, "classroom1", "term1");
-        dependency.addDependency(university, "classroom2", "term2");
-        dependency.addDependency(university, "classroom3", "term2");
-        dependency.addDependency(university, "classroom4", "term3");
-        dependency.addDependency(university, "classroom5", "term1");
+        dependency.addDependency("classroom1", "term1");
+        dependency.addDependency("classroom2", "term2");
+        dependency.addDependency("classroom3", "term2");
+        dependency.addDependency("classroom4", "term3");
+        dependency.addDependency("classroom5", "term1");
         System.out.println("");
-        dependency.showDependency(university, "term1");
+        dependency.showDependency("term1");
     }
 }

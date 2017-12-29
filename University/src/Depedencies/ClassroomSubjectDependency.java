@@ -5,19 +5,19 @@ import UniveristyPackage.University;
 public class ClassroomSubjectDependency implements UniversityDependency {
 
     @Override
-    public void addDependency(University university, String firstString, String secondString) {
-        if (university.subjectsMap.containsKey(secondString)) {
-            if (university.classroomsMap.containsKey(firstString)) {
-                university.subjectsMap.get(secondString).classroomIds.add(firstString);
+    public void addDependency(String firstString, String secondString) {
+        if (University.subjectsMap.containsKey(secondString)) {
+            if (University.classroomsMap.containsKey(firstString)) {
+                University.subjectsMap.get(secondString).classroomIds.add(firstString);
             }
         }
     }
 
     @Override
-    public void showDependency(University university, String firstString) {
-        System.out.println("Sale, w ktorych odbywa sie " + university.subjectsMap.get(firstString).name);
-        for (String depedency : university.subjectsMap.get(firstString).classroomIds) {
-            System.out.println(university.classroomsMap.get(depedency).name);
+    public void showDependency(String firstString) {
+        System.out.println("Sale, w ktorych odbywa sie " + University.subjectsMap.get(firstString).name);
+        for (String depedency : University.subjectsMap.get(firstString).classroomIds) {
+            System.out.println(University.classroomsMap.get(depedency).name);
         }
     }
 }
