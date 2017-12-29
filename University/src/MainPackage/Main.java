@@ -9,7 +9,6 @@ import java.util.List;
 class Main {
     public static void main(String[] args) {
         University university = new University("university1", "Uniwersytet Warszawski");
-        UniversityDependency dependency;
         List<Subject> subjects = new LinkedList<>();
         List<Student> students = new LinkedList<>();
         List<Term> terms = new LinkedList<>();
@@ -71,8 +70,8 @@ class Main {
 
         university.addClassrooms(classrooms);
 
-        UniversityDependencyInjector udInjector = null;
-        Consumer app = null;
+        UniversityDependencyInjector udInjector;
+        Consumer app;
         udInjector = new SubjectStudentDependencyInjector();
         app = udInjector.getConsumer();
 
