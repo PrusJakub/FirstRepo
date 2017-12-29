@@ -4,8 +4,6 @@ global class AnimalLocatorMock implements HttpCalloutMock {
     global HttpResponse respond(HTTPRequest request) {
         String animalId = request.getEndpoint().substringAfterLast('/');
         AnimalLocator.Animal animal = new AnimalLocator.Animal(animalId, animalName, 'chicken food', 'cluck cluck');
-        System.debug('jkub // ' + request);
-        System.debug('jkub // ' + animalId);
         HttpResponse response = new HttpResponse();
         response.setHeader('Content-Type', 'application/json');
         response.setBody('{"animal":' + JSON.serialize(animal) + '}');

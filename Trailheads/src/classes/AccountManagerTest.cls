@@ -16,6 +16,17 @@ private class AccountManagerTest {
         Account testAccount = new Account(Name = 'Test Record');
         insert testAccount;
         Contact testContact = new Contact(LastName = 'Test', AccountId = testAccount.Id);
+        insert testContact;
         return testAccount.Id;
+    }
+    
+    @isTest static void testGetAccountByWrongId(){
+    	String wrongId = 'zwaloneId';
+        RestRequest request = new RestRequest();
+        request.requestURI = 'https://resourceful-moose-74046-dev-ed.my.salesforce.com/services/apexrest/Accounts/' + wrongId + '/contacts';
+        request.httpMethod = 'GET';
+        RestContext.request = request;
+        Account thisAccount = AccountManager.getAccount();
+        System.assertEquals(null, thisAccount);
     }
 }
