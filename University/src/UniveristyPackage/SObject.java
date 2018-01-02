@@ -1,4 +1,4 @@
-package UniveristyPackage;
+package univeristyPackage;
 
 
 import java.time.LocalDate;

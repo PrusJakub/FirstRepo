@@ -1,4 +1,4 @@
-package UniveristyPackage;
+package univeristyPackage;
 
 public class Classroom extends SObject {
 

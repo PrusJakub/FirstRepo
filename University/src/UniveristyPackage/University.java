@@ -1,7 +1,7 @@
-package UniveristyPackage;
+package univeristyPackage;
 
-import Depedencies.Consumer;
-import Depedencies.UniversityDependency;
+import depedenciesPackage.Consumer;
+import depedenciesPackage.UniversityDependency;
 
 import java.util.HashMap;
 import java.util.List;

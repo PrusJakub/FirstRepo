@@ -1,6 +1,6 @@
-package Depedencies;
+package depedenciesPackage;
 
-import UniveristyPackage.University;
+import univeristyPackage.University;
 
 public class SubjectStudentDependencyInjector implements UniversityDependencyInjector {
     @Override

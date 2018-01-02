@@ -1,7 +1,7 @@
-package MainPackage;
+package mainPackage;
 
-import Depedencies.*;
-import UniveristyPackage.*;
+import depedenciesPackage.*;
+import univeristyPackage.*;
 
 import java.util.LinkedList;
 import java.util.List;
