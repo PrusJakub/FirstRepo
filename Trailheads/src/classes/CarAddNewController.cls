@@ -1,9 +1,6 @@
 public with sharing class CarAddNewController {
 
     private final Car__c car;
-    private final String carBrand = Label.DefaultCar;
-    private final String carModel = 'Insignia';
-    private final String carName = carBrand + ' ' + carModel;
     public ApexPages.StandardController standardController;
 
     public CarAddNewController(ApexPages.StandardController controller) {
@@ -12,9 +9,9 @@ public with sharing class CarAddNewController {
     }
 
     public PageReference save() {
-        this.car.Name = carName;
-        this.car.Marka__c = carBrand;
-        this.car.Model__c = carModel;
+        this.car.Name = StaticFields.carName;
+        this.car.Marka__c = StaticFields.carBrand;
+        this.car.Model__c = StaticFields.carModel;
         return standardController.save();
     }
 

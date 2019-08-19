@@ -8,7 +8,7 @@ public with sharing class DailyLeadProcessor implements Schedulable {
                 LIMIT 200
         ]);
         for (Lead ld : leadsWithBlanks) {
-            ld.LeadSource = 'Dreamforce';
+            ld.LeadSource = StaticFields.leadSource;
         }
         update leadsWithBlanks;
     }

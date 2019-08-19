@@ -1,17 +1,27 @@
-package UniveristyPackage;
+package univeristyPackage;
+
+import depedenciesPackage.Consumer;
+import depedenciesPackage.UniversityDependency;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// a tu gdzie jest konstruktor - id i name, hm? nulle mają być zawsze?
-public class University extends SObject {
+public class University extends SObject implements Consumer{
 
-    private Map<String, Student> studentsMap = new HashMap<>();
-    private Map<String, Subject> subjectsMap = new HashMap<>();
-    private Map<String, Term> termsMap = new HashMap<>();
-    private Map<String, Classroom> classroomsMap = new HashMap<>();
+    private UniversityDependency dependency;
 
+    public static Map<String, Student> studentsMap = new HashMap<>();
+    public static Map<String, Subject> subjectsMap = new HashMap<>();
+    public static Map<String, Term> termsMap = new HashMap<>();
+    public static Map<String, Classroom> classroomsMap = new HashMap<>();
+
+    public University(String id, String name) {
+        super(id, name);
+    }
+    public University(UniversityDependency ud){
+        this.dependency = ud;
+    }
 
     public void addStudents(List<Student> students) {
         for (Student s : students) {
@@ -37,51 +47,14 @@ public class University extends SObject {
         }
     }
 
-    // jaki to ma sens? 
-    // wysyłasz 2 id - wyciągasz odpowiedniego studenta i na nim dodajesz do seta odpowiednie id
-    // bonusowo sprawdzaj czy id subjectu jest ok zanim je dodasz
 
-    public void addSubjectsForStudent(String subjectId, String studentId) {
-        if(studentsMap.containsKey(studentId)){
-            if(subjectsMap.containsKey(subjectId)){
-                studentsMap.get(studentId).subjectIds.add(subjectId);
-            }
-        }
-    }
-    //W jaki sposob wyswietlic rzeczy z seta?
-    public void showSubjectsOfStudent(String studentId) {
-        studentsMap.get(studentId).subjectIds.
+    @Override
+    public void createDependencies(String toDependency, String dependencyOwner) {
+        this.dependency.addDependency(toDependency, dependencyOwner);
     }
 
-    public void addClassroomForSubject(String subjectId, String classroomId) {
-        if (subjectsMap.containsKey(subjectId)) {
-            if (classroomsMap.containsKey(classroomId)) {
-                subjectsMap.get(subjectId).classroomIds.add(classroomId);
-            }
-        }
+    @Override
+    public void showDependencies(String dependencyOwner){
+        this.dependency.showDependency(dependencyOwner);
     }
-
-    public void showClassroomsOfSubject(Subject subject) {
-        for (int i = 0; i < subject.classroomOfSubject.size(); i++) {
-            System.out.println(classroomsMap.get(subject.getClassroom(i)).getName());
-        }
-    }
-
-
-    public void addTermForSubject(String subjectId, String termId) {
-        if (subjectsMap.containsKey(subjectId)) {
-            if (termsMap.containsKey(termId)) {
-                subjectsMap.get(subjectId).termIds.add(termId);
-            }
-        }
-    }
-
-    public void showTermsOfSubject(Subject subject) {
-        for (int i = 0; i < subject.termOfSubject.size(); i++) {
-            System.out.println(termsMap.get(subject.getTerm(i)).getName());
-        }
-    }
-
-
 }
-

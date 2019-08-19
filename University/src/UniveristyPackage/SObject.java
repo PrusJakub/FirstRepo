@@ -1,14 +1,14 @@
-package UniveristyPackage;
+package univeristyPackage;
+
 
 import java.time.LocalDate;
 
 abstract class SObject {
-    // public 
-    // zawsze dodawaj znaczniki dostępu chyba, że bardzo celowo wiesz, że ma ich być nie być
-    String id;
-    String name;
-    String createdBy;
-    LocalDate createdDate;
+
+    public String id;
+    public String name;
+    public String createdBy;
+    public LocalDate createdDate;
 
     public SObject() {
 
@@ -17,8 +17,8 @@ abstract class SObject {
     public SObject(String id, String name) {
         this.id = id;
         this.name = name;
-        createdBy = ProjectDefaults.createdBy;
-        createdDate = ProjectDefaults.createdDate;
+        createdBy = ProjectDefaults.DEFAULT_CREATED_BY;
+        createdDate = LocalDate.now();
     }
 
     String getId() {
@@ -29,5 +29,4 @@ abstract class SObject {
         return this.name;
     }
 
-    // DRY, DRY, DRY
 }
